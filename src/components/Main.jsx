@@ -1,4 +1,4 @@
-const Main = ({ list, delete1 ,search}) => {
+const Main = ({ list, delete1, search }) => {
   return (
     <>
       <main>
@@ -21,41 +21,42 @@ const Main = ({ list, delete1 ,search}) => {
               </tr>
             </thead>
             <tbody>
-              {list.filter((item)=>{
-                let searchTerm=search.toLowerCase();
-                let fname=item.fname.toLowerCase();
-                let lname=item.lname.toLowerCase();
-                let age=item.age.toLowerCase();
-                return searchTerm===""
-                ?item
-                :fname.includes(searchTerm) || 
-                 lname.toLowerCase().includes(searchTerm) ||
-                 age.toLowerCase().includes(searchTerm)
-              })
-              .map((item) => {
-                return (
-                  <tr key={item.id}>
-                    <th scope="row">{item.id}</th>
-                    <td>{item.fname}</td>
-                    <td>{item.lname}</td>
-                    <td>{item.age}</td>
-                    <td>
-                      <div className="row d-flex justify-content-around">
-                        <button
-                          className="col-lg-5 col-sm-5 btn btn-danger"
-                          onClick={() => delete1(item.id)}
-                        >
-                          DELETE
-                        </button>
+              {list
+                .filter((item) => {
+                  let searchTerm = search.toLowerCase();
+                  let fname = item.fname.toLowerCase();
+                  let lname = item.lname.toLowerCase();
+                  let age = item.age.toLowerCase();
+                  return searchTerm === ""
+                    ? item
+                    : fname.includes(searchTerm) ||
+                        lname.toLowerCase().includes(searchTerm) ||
+                        age.toLowerCase().includes(searchTerm);
+                })
+                .map((item) => {
+                  return (
+                    <tr key={item.id}>
+                      <th scope="row">{item.id}</th>
+                      <td>{item.fname}</td>
+                      <td>{item.lname}</td>
+                      <td>{item.age}</td>
+                      <td>
+                        <div className="row d-flex justify-content-around">
+                          <button
+                            className="col-lg-5 col-sm-5 btn btn-danger"
+                            onClick={() => delete1(item.id)}
+                          >
+                            DELETE
+                          </button>
 
-                        <button className="col-lg-5 col-sm-5 btn btn-outline-warning">
-                          EDIT
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
+                          <button className="col-lg-5 col-sm-5 btn btn-outline-warning">
+                            EDIT
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
             </tbody>
           </table>
         </div>
