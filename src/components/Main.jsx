@@ -30,8 +30,8 @@ const Main = ({ list, delete1, search }) => {
                   return searchTerm === ""
                     ? item
                     : fname.includes(searchTerm) ||
-                        lname.toLowerCase().includes(searchTerm) ||
-                        age.toLowerCase().includes(searchTerm);
+                        lname.includes(searchTerm) ||
+                        age.includes(searchTerm);
                 })
                 .map((item) => {
                   return (
@@ -49,9 +49,9 @@ const Main = ({ list, delete1, search }) => {
                             DELETE
                           </button>
 
-                          <button className="col-lg-5 col-sm-5 btn btn-outline-warning">
+                          {/* <button className="col-lg-5 col-sm-5 btn btn-outline-warning">
                             EDIT
-                          </button>
+                          </button> */}
                         </div>
                       </td>
                     </tr>
