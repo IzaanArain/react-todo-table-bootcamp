@@ -22,11 +22,15 @@ const Main = ({ list, delete1 ,search}) => {
             </thead>
             <tbody>
               {list.filter((item)=>{
-                return search.toLowerCase()===""
+                let searchTerm=search.toLowerCase();
+                let fname=item.fname.toLowerCase();
+                let lname=item.lname.toLowerCase();
+                let age=item.age.toLowerCase();
+                return searchTerm===""
                 ?item
-                :item.fname.toLowerCase().includes(search) || 
-                 item.lname.toLowerCase().includes(search) ||
-                 item.age.toLowerCase().includes(search)
+                :fname.includes(searchTerm) || 
+                 lname.toLowerCase().includes(searchTerm) ||
+                 age.toLowerCase().includes(searchTerm)
               })
               .map((item) => {
                 return (

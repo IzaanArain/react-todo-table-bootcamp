@@ -3,6 +3,7 @@ const Form = ({ data, onchange, click,sTerm,doSearch }) => {
     <>
       <div className="container p-4">
         <form onSubmit={click}>
+
           <div className="row">
             <div className="col">
               <label htmlFor="search" className="form-label"><h1>Search:</h1></label>
@@ -16,7 +17,9 @@ const Form = ({ data, onchange, click,sTerm,doSearch }) => {
               <h1>{sTerm}</h1>
             </div>
           </div>
+
           <div className="row">
+
             <div className="col-lg-6">
               <div className="mb-3">
                 <label htmlFor="fname" className="form-label">
@@ -33,6 +36,7 @@ const Form = ({ data, onchange, click,sTerm,doSearch }) => {
                 />
               </div>
             </div>
+
             <div className="col-lg-6">
               <div className="mb-3">
                 <label htmlFor="lname" className="form-label">
@@ -49,9 +53,11 @@ const Form = ({ data, onchange, click,sTerm,doSearch }) => {
                 />
               </div>
             </div>
+
           </div>
 
           <div className="row">
+
             <div className="col-lg-6">
               <div className="mb-3">
                 <label htmlFor="age" className="form-label">
@@ -68,6 +74,7 @@ const Form = ({ data, onchange, click,sTerm,doSearch }) => {
                 />
               </div>
             </div>
+
             <div className="col-lg-6">
               <button
                 type="submit"
@@ -77,6 +84,7 @@ const Form = ({ data, onchange, click,sTerm,doSearch }) => {
                 Submit
               </button>
             </div>
+            
           </div>
         </form>
         <h1>
