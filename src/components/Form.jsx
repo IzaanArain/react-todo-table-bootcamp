@@ -1,25 +1,26 @@
-const Form = ({ data, onchange, click,sTerm,doSearch }) => {
+const Form = ({ data, onchange, click, sTerm, doSearch }) => {
   return (
     <>
       <div className="container p-4">
         <form onSubmit={click}>
-
           <div className="row">
             <div className="col">
-              <label htmlFor="search" className="form-label"><h1>Search:</h1></label>
-              <input 
-              type="text" 
-              id="search" 
-              value={sTerm} 
-              onChange={doSearch}
-              className="form-control"
-              aria-describedby="search item" />
+              <label htmlFor="search" className="form-label">
+                <h1>Search:</h1>
+              </label>
+              <input
+                type="text"
+                id="search"
+                value={sTerm}
+                onChange={doSearch}
+                className="form-control"
+                aria-describedby="search item"
+              />
               <h1>{sTerm}</h1>
             </div>
           </div>
 
           <div className="row">
-
             <div className="col-lg-6">
               <div className="mb-3">
                 <label htmlFor="fname" className="form-label">
@@ -53,11 +54,9 @@ const Form = ({ data, onchange, click,sTerm,doSearch }) => {
                 />
               </div>
             </div>
-
           </div>
 
           <div className="row">
-
             <div className="col-lg-6">
               <div className="mb-3">
                 <label htmlFor="age" className="form-label">
@@ -84,7 +83,6 @@ const Form = ({ data, onchange, click,sTerm,doSearch }) => {
                 Submit
               </button>
             </div>
-            
           </div>
         </form>
         <h1>
