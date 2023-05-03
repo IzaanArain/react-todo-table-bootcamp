@@ -1,3 +1,5 @@
+import EditTable from "./EditTable";
+
 const Main = ({ list, delete1, search }) => {
   return (
     <>
@@ -52,6 +54,9 @@ const Main = ({ list, delete1, search }) => {
                           {/* <button className="col-lg-5 col-sm-5 btn btn-outline-warning">
                             EDIT
                           </button> */}
+
+                          <EditTable/>
+                      
                         </div>
                       </td>
                     </tr>
