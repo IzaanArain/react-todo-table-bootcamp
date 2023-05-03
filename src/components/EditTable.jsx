@@ -24,22 +24,24 @@ function MyVerticallyCenteredModal(props) {
           consectetur ac, vestibulum at eros.
         </p> */}
         <Form>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+          <h1 style={{fontFamily:"fantasy,cursive"}}>ID : </h1>
+          <hr />
+          <Form.Group className="mb-3" controlId="formFname">
+            <Form.Label><h3 style={{fontFamily:"cursive",fontWeight:"bolder"}}>First Name : </h3></Form.Label>
+            <Form.Control type="text" name="fname" placeholder="Enter first name" />
             {/* <Form.Text className="text-muted">
               We'll never share your email with anyone else.
             </Form.Text> */}
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+          <Form.Group className="mb-3" controlId="formLname">
+            <Form.Label><h3 style={{fontFamily:"cursive",fontWeight:"bolder"}}>Last Name : </h3></Form.Label>
+            <Form.Control type="text" name="lname" placeholder="Enter last name" />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+          <Form.Group className="mb-3" controlId="formAge">
+            <Form.Label><h3 style={{fontFamily:"cursive",fontWeight:"bolder"}}>Age : </h3></Form.Label>
+            <Form.Control type="text" name="age" placeholder="enter Age" />
           </Form.Group>
           {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />

@@ -45,7 +45,10 @@ function App() {
 
   const HandleChange = (e) => {
     const { name, value } = e.target;
-    setNewUser({ ...newUser, [name]: value });
+    let newFormData={...newUser}
+    newFormData[name]=value
+    // setNewUser({ ...newUser, [name]: value });
+    setNewUser(newFormData)
   };
 
   const deleteFunc = (id) => {
