@@ -13,7 +13,7 @@ const Form = ({ data, onchange, click, sTerm, doSearch }) => {
                 id="search"
                 value={sTerm}
                 onChange={doSearch}
-                className="form-control"
+                className="form-control shadow"
                 aria-describedby="search item"
               />
               <h1>{sTerm}</h1>
@@ -28,7 +28,7 @@ const Form = ({ data, onchange, click, sTerm, doSearch }) => {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control shadow"
                   id="fname"
                   aria-describedby="first name"
                   name="fname"
@@ -45,7 +45,7 @@ const Form = ({ data, onchange, click, sTerm, doSearch }) => {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control shadow"
                   id="lname"
                   aria-describedby="last name"
                   name="lname"
@@ -64,7 +64,7 @@ const Form = ({ data, onchange, click, sTerm, doSearch }) => {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control shadow"
                   id="age"
                   aria-describedby="user age"
                   name="age"

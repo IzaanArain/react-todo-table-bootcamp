@@ -36,8 +36,9 @@ function MyVerticallyCenteredModal(props) {
               type="text"
               name="fname"
               value={props.item.fname}
+              onChange={props.onChange}
               placeholder="Enter first name"
-              onChange={props.onchange}
+              className="shadow"
             />
             {/* <Form.Text className="text-muted">
               We'll never share your email with anyone else.
@@ -52,9 +53,10 @@ function MyVerticallyCenteredModal(props) {
             </Form.Label>
             <Form.Control
               type="text"
-              // name="lname"
+              name="lname"
               // value={props.item.lname}
-              placeholder="Enter last name"/>
+              placeholder="Enter last name"
+              className="shadow"/>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formAge">
@@ -65,9 +67,10 @@ function MyVerticallyCenteredModal(props) {
             </Form.Label>
             <Form.Control 
             type="text" 
-            // name="age"
+            name="age"
             // value={props.item.age} 
-            placeholder="enter Age" />
+            placeholder="enter Age" 
+            className="shadow"/>
           </Form.Group>
           {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
@@ -86,7 +89,7 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-function EditTable({ item ,onchange}) {
+function EditTable({ item,onchange}) {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
@@ -108,7 +111,7 @@ function EditTable({ item ,onchange}) {
 
       <MyVerticallyCenteredModal
         item={item}
-        onchange={onchange}
+        onChange={onchange}
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
