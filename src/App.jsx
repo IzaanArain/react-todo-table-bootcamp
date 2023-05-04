@@ -25,19 +25,17 @@ function App() {
   const [ulist, setList] = useState(userList);
   const [newUser, setNewUser] = useState({
     id: 0,
-    name: "",
+    fname: "",
     lname: "",
     age: "",
   });
 
   const [editNewUser, setEditNewUser] = useState({
-    id:0,
-    name: "",
+    fname: "",
     lname: "",
     age: "",
   });
   // const updateData=(id,editNewUser)=>{
-  //   e.preventDefault()
   //   setList(ulist.map((item)=>{
   //     item.id === id ? editNewUser : item;
   //   }))
@@ -45,6 +43,9 @@ function App() {
 
   const EditHandleChange = (e) => {
     const { name, value } = e.target;
+    const newFormData={...editNewUser}
+    newFormData[name]=value;
+    setEditNewUser(newFormData)
   };
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -86,10 +87,11 @@ function App() {
         doSearch={handleSearchTermChange}
       />
       <Main 
-      list={ulist} 
+      list={ulist}
+      new_data={editNewUser} 
       delete1={deleteFunc} 
       search={searchTerm}
-      onchange={EditHandleChange} />
+      onchange={EditHandleChange}/>
     </>
   );
 }

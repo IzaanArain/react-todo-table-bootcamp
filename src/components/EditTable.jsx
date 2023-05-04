@@ -23,7 +23,7 @@ function MyVerticallyCenteredModal(props) {
           dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
           consectetur ac, vestibulum at eros.
         </p> */}
-        <Form>
+        <Form >
           <h1 style={{ fontFamily: "fantasy,cursive" }}>ID : {props.item.id}</h1>
           <hr />
           <Form.Group className="mb-3" controlId="formFname">
@@ -35,7 +35,7 @@ function MyVerticallyCenteredModal(props) {
             <Form.Control
               type="text"
               name="fname"
-              value={props.item.fname}
+              value={props.new_data.fname}
               onChange={props.onChange}
               placeholder="Enter first name"
               className="shadow"
@@ -44,6 +44,8 @@ function MyVerticallyCenteredModal(props) {
               We'll never share your email with anyone else.
             </Form.Text> */}
           </Form.Group>
+          {/* { console.log(props.new_data.fname)} */}
+          <h6>{props.new_data.fname}</h6>
       
           <Form.Group className="mb-3" controlId="formLname">
             <Form.Label>
@@ -54,10 +56,12 @@ function MyVerticallyCenteredModal(props) {
             <Form.Control
               type="text"
               name="lname"
-              // value={props.item.lname}
+              value={props.new_data.lname}
+              onChange={props.onChange}
               placeholder="Enter last name"
               className="shadow"/>
           </Form.Group>
+          {props.new_data.lname}
 
           <Form.Group className="mb-3" controlId="formAge">
             <Form.Label>
@@ -68,18 +72,22 @@ function MyVerticallyCenteredModal(props) {
             <Form.Control 
             type="text" 
             name="age"
-            // value={props.item.age} 
+            value={props.new_data.age}
+            onChange={props.onChange}
             placeholder="enter Age" 
             className="shadow"/>
           </Form.Group>
+          {props.new_data.age}
           {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
           </Form.Group> */}
-          <Button 
+         <Form.Group>
+         <Button 
           variant="primary" 
           type="submit">
             Submit
           </Button>
+         </Form.Group>
         </Form>
       </Modal.Body>
       <Modal.Footer>
@@ -89,7 +97,7 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-function EditTable({ item,onchange}) {
+function EditTable({ item,onchange,new_data,click}) {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
@@ -107,11 +115,10 @@ function EditTable({ item,onchange}) {
         Launch vertically centered modal
       </Button> */}
 
-      {/* {console.log(tablelist)} */}
-
       <MyVerticallyCenteredModal
         item={item}
         onChange={onchange}
+        new_data={new_data}
         show={modalShow}
         onHide={() => setModalShow(false)}
       />

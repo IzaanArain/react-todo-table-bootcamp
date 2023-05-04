@@ -1,6 +1,6 @@
 import EditTable from "./EditTable";
 
-const Main = ({ list, delete1, search,onchange}) => {
+const Main = ({ list, delete1, search,onchange,new_data}) => {
   return (
     <>
       <main>
@@ -57,7 +57,9 @@ const Main = ({ list, delete1, search,onchange}) => {
 
                           <EditTable 
                           item={item}
-                          onchange={onchange}/>
+                          new_data={new_data}
+                          onchange={onchange}
+                          />
                       
                         </div>
                       </td>
