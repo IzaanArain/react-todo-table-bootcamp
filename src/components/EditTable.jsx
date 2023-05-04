@@ -13,7 +13,7 @@ function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-        You can update your information
+          You can update your information
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -24,29 +24,57 @@ function MyVerticallyCenteredModal(props) {
           consectetur ac, vestibulum at eros.
         </p> */}
         <Form>
-          <h1 style={{fontFamily:"fantasy,cursive"}}>ID : </h1>
+          <h1 style={{ fontFamily: "fantasy,cursive" }}>ID : {props.item.id}</h1>
           <hr />
           <Form.Group className="mb-3" controlId="formFname">
-            <Form.Label><h3 style={{fontFamily:"cursive",fontWeight:"bolder"}}>First Name : </h3></Form.Label>
-            <Form.Control type="text" name="fname" placeholder="Enter first name" />
+            <Form.Label>
+              <h3 style={{ fontFamily: "cursive", fontWeight: "bolder" }}>
+                First Name :{props.item.fname}
+              </h3>
+            </Form.Label>
+            <Form.Control
+              type="text"
+              name="fname"
+              value={props.item.fname}
+              placeholder="Enter first name"
+              onChange={props.onchange}
+            />
             {/* <Form.Text className="text-muted">
               We'll never share your email with anyone else.
             </Form.Text> */}
           </Form.Group>
-
+      
           <Form.Group className="mb-3" controlId="formLname">
-            <Form.Label><h3 style={{fontFamily:"cursive",fontWeight:"bolder"}}>Last Name : </h3></Form.Label>
-            <Form.Control type="text" name="lname" placeholder="Enter last name" />
+            <Form.Label>
+              <h3 style={{ fontFamily: "cursive", fontWeight: "bolder" }}>
+                Last Name : {props.item.lname}
+              </h3>
+            </Form.Label>
+            <Form.Control
+              type="text"
+              // name="lname"
+              // value={props.item.lname}
+              placeholder="Enter last name"/>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formAge">
-            <Form.Label><h3 style={{fontFamily:"cursive",fontWeight:"bolder"}}>Age : </h3></Form.Label>
-            <Form.Control type="text" name="age" placeholder="enter Age" />
+            <Form.Label>
+              <h3 style={{ fontFamily: "cursive", fontWeight: "bolder" }}>
+                Age :{props.item.age}
+              </h3>
+            </Form.Label>
+            <Form.Control 
+            type="text" 
+            // name="age"
+            // value={props.item.age} 
+            placeholder="enter Age" />
           </Form.Group>
           {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
           </Form.Group> */}
-          <Button variant="primary" type="submit">
+          <Button 
+          variant="primary" 
+          type="submit">
             Submit
           </Button>
         </Form>
@@ -58,7 +86,7 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-function EditTable() {
+function EditTable({ item ,onchange}) {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
@@ -76,7 +104,11 @@ function EditTable() {
         Launch vertically centered modal
       </Button> */}
 
+      {/* {console.log(tablelist)} */}
+
       <MyVerticallyCenteredModal
+        item={item}
+        onchange={onchange}
         show={modalShow}
         onHide={() => setModalShow(false)}
       />

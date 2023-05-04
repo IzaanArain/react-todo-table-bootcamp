@@ -6,8 +6,6 @@ import Form from "./components/Form";
 import { v4 as uuidv4 } from "uuid";
 import EditTable from "./components/EditTable";
 
-
-
 const user = {
   fname: "john",
   lname: "wick",
@@ -28,10 +26,27 @@ function App() {
   const [ulist, setList] = useState(userList);
   const [newUser, setNewUser] = useState({
     id: 0,
-    fname: "",
+    name: "",
     lname: "",
     age: "",
   });
+
+  const [editNewUser, setEditNewUser] = useState({
+    id:0,
+    name: "",
+    lname: "",
+    age: "",
+  });
+  // const updateData=(id,editNewUser)=>{
+  //   e.preventDefault()
+  //   setList(ulist.map((item)=>{
+  //     item.id === id ? editNewUser : item;
+  //   }))
+  // }
+
+  const EditHandleChange = (e) => {
+    const { name, value } = e.target;
+  };
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -45,10 +60,10 @@ function App() {
 
   const HandleChange = (e) => {
     const { name, value } = e.target;
-    let newFormData={...newUser}
-    newFormData[name]=value
+    let newFormData = { ...newUser };
+    newFormData[name] = value;
     // setNewUser({ ...newUser, [name]: value });
-    setNewUser(newFormData)
+    setNewUser(newFormData);
   };
 
   const deleteFunc = (id) => {
@@ -74,7 +89,8 @@ function App() {
       <Main 
       list={ulist} 
       delete1={deleteFunc} 
-      search={searchTerm} />
+      search={searchTerm}
+      onchange={EditHandleChange} />
     </>
   );
 }
