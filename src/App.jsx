@@ -4,7 +4,6 @@ import Main from "./components/Main";
 import userList from "./components/People";
 import Form from "./components/Form";
 import { v4 as uuidv4 } from "uuid";
-import EditTable from "./components/EditTable";
 
 const user = {
   fname: "john",
