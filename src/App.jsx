@@ -11,13 +11,13 @@ const user = {
   age: "89",
 };
 
-const inc = (arr) => {
-  let num1 = 0;
-  for (let i = 0; i < arr.length; i++) {
-    num1 = Math.floor(Math.random() * 100);
-  }
-  return num1;
-};
+// const inc = (arr) => {
+//   let num1 = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     num1 = Math.floor(Math.random() * 100);
+//   }
+//   return num1;
+// };
 
 // console.log(inc(userList))
 function App() {
@@ -29,18 +29,28 @@ function App() {
     lname: "",
     age: "",
   });
-
+  // console.log(newUser)
   const [editNewUser, setEditNewUser] = useState({
     fname: "",
     lname: "",
     age: "",
   });
-  // const updateData=(id,editNewUser)=>{
-  //   setList(ulist.map((item)=>{
-  //     item.id === id ? editNewUser : item;
-  //   }))
-  // }
+  // console.log(editNewUser)
+  const updateData=(id)=>{
+    setList(ulist.map((item)=>{
+      item.id === id ? editNewUser : item;
+    }))
+  }
 
+  // const updateData = (id) => {
+  //   setList(...ulist,ulist.map((item) => {
+  //     if (item.id === id) {
+  //       return editNewUser;
+  //     } else {
+  //       return item;
+  //     }
+  //   }));
+  // }
   const EditHandleChange = (e) => {
     const { name, value } = e.target;
     const newFormData={...editNewUser}
@@ -72,7 +82,7 @@ function App() {
 
   const ClickHandler = (e) => {
     e.preventDefault();
-    const newUserWithId = { ...newUser, id: inc(userList) };
+    const newUserWithId = { ...newUser, id:Math.max(...ulist.map(user => user.id)) + 1, };
     setList([...ulist, newUserWithId]);
     setNewUser({ id: null, fname: "", age: "", lname: "" });
   };
@@ -91,7 +101,8 @@ function App() {
       new_data={editNewUser} 
       delete1={deleteFunc} 
       search={searchTerm}
-      onchange={EditHandleChange}/>
+      onchange={EditHandleChange}
+      update_data={updateData}/>
     </>
   );
 }

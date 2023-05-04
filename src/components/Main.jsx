@@ -1,6 +1,8 @@
 import EditTable from "./EditTable";
 
-const Main = ({ list, delete1, search,onchange,new_data}) => {
+const Main = ({ list, delete1, search,onchange,new_data,update_data}) => {
+  // console.log(delete1)
+  // console.log(update_data)
   return (
     <>
       <main>
@@ -59,6 +61,7 @@ const Main = ({ list, delete1, search,onchange,new_data}) => {
                           item={item}
                           new_data={new_data}
                           onchange={onchange}
+                          update_data={update_data}
                           />
                       
                         </div>

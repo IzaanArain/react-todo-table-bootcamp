@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
 function MyVerticallyCenteredModal(props) {
+  // console.log("modal : ",props.update_data)
   return (
     <Modal
       {...props}
@@ -23,7 +24,7 @@ function MyVerticallyCenteredModal(props) {
           dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
           consectetur ac, vestibulum at eros.
         </p> */}
-        <Form >
+        <Form>
           <h1 style={{ fontFamily: "fantasy,cursive" }}>ID : {props.item.id}</h1>
           <hr />
           <Form.Group className="mb-3" controlId="formFname">
@@ -97,9 +98,9 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-function EditTable({ item,onchange,new_data,click}) {
+function EditTable({ item,onchange,new_data,update_data}) {
   const [modalShow, setModalShow] = React.useState(false);
-
+  console.log("EditTable-button : ",update_data)
   return (
     <>
       <button
@@ -119,8 +120,11 @@ function EditTable({ item,onchange,new_data,click}) {
         item={item}
         onChange={onchange}
         new_data={new_data}
+        update_data={update_data}
         show={modalShow}
         onHide={() => setModalShow(false)}
+        backdrop="static"
+        keyboard={false}
       />
     </>
   );
