@@ -31,26 +31,19 @@ function App() {
   });
   // console.log(newUser)
   const [editNewUser, setEditNewUser] = useState({
+    id:0,
     fname: "",
     lname: "",
     age: "",
   });
   // console.log(editNewUser)
-  const updateData=(id)=>{
+  const updateData=(id,updatedInfo)=>{
     setList(ulist.map((item)=>{
-      item.id === id ? editNewUser : item;
+      item.id === id ? updatedInfo : item;
     }))
   }
 
-  // const updateData = (id) => {
-  //   setList(...ulist,ulist.map((item) => {
-  //     if (item.id === id) {
-  //       return editNewUser;
-  //     } else {
-  //       return item;
-  //     }
-  //   }));
-  // }
+
   const EditHandleChange = (e) => {
     const { name, value } = e.target;
     const newFormData={...editNewUser}

@@ -28,7 +28,7 @@ const Main = ({ list, delete1, search,onchange,new_data,update_data}) => {
               {list
                 .filter((item) => {
                   let searchTerm = search.toLowerCase();
-                  let fname = item.fname.toLowerCase();
+                  let fname = item.fname.toLowerCase()
                   let lname = item.lname.toLowerCase();
                   let age = item.age.toLowerCase();
                   return searchTerm === ""
