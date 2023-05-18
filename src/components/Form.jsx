@@ -3,6 +3,26 @@ const Form = ({ data, onchange, click, sTerm, doSearch }) => {
     <>
       <div className="container p-4">
         <form onSubmit={click}>
+
+          <div className="row">
+          <div className="col">
+              <div className="mb-3">
+                <label htmlFor="fname" className="form-label">
+                  <h1>Search :</h1>
+                </label>
+                <input
+                  type="text"
+                  className="form-control shadow"
+                  id="search"
+                  aria-describedby="first name"
+                  name="seacrch"
+                  value={data.fname}
+                  onChange={onchange}
+                />
+              </div>
+            </div>
+          </div>
+
           <div className="row">
             <div className="col">
               <label htmlFor="search" className="form-label">
